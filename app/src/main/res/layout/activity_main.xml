@@ -47,4 +47,20 @@
             android:id="@+id/longitudeTextView"
             android:layout_weight="50" />
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="location set"
+        android:id="@+id/button"
+        android:layout_weight="10"
+        android:onClick="setAsyncLocation" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location Display"
+        android:id="@+id/button2"
+        android:layout_weight="10"
+        android:onClick="updateLocation" />
 </LinearLayout>
