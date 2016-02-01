@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         connectLocationService();
     }
 
+    // connects and binds to instance of LocationService.class
     private void connectLocationService(){
         if (!locationServiceConnected) {
             Intent locationServiceIntent = new Intent(this, LocationService.class);
@@ -55,14 +56,15 @@ public class MainActivity extends AppCompatActivity {
             connectLocationService();
         }
         setName(view,"setAsync");
-        locationService.findLocation();
+        //locationService.findLocation();
     }
 
     public void updateLocation(View view){
-        if (locationServiceConnected && locationService.ready() ){
+        if (locationServiceConnected && locationService.ready() && false ){
             location = locationService.getLocation();
             TextView latitudeTextView = (TextView)findViewById(R.id.latitudeTextView);
             TextView longitudeTextView = (TextView)findViewById(R.id.longitudeTextView);
+
 
             double latitude = location.getLatitude();
             double longitude = location.getLongitude();
@@ -73,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 setName(view, "NULL");
 
         }else{
-            setName(view,"notready");
+            setName(view,"emulator");
         }
 
     }
